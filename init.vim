@@ -1,8 +1,9 @@
-syntax on
+syntax on:
 
 set nu
 set undodir=~/.vim/undodir
 set undofile
+set tabstop=4
 
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'

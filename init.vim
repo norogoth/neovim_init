@@ -11,6 +11,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'vim-utils/vim-man'
 Plug 'https://github.com/rstacruz/vim-closer'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'vimwiki/wimwiki'
 call plug#end()
 
 colorscheme gruvbox

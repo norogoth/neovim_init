@@ -1,6 +1,7 @@
 syntax on
 
 set nu
+set noswapfile
 set undodir=~/.vim/undodir
 set undofile
 set tabstop=4
@@ -8,9 +9,10 @@ set shiftwidth=4
 set softtabstop=4
 set foldmethod=indent
 set foldlevel=1000
+set clipboard=unnamedplus
 
 call plug#begin('~/.vim/plugged')
-" let g:doom_one_terminal_colors = v:true
+Plug 'vim-scripts/copypath.vim'
 Plug 'sts10/vim-pink-moon'
 Plug 'franbach/miramare' 
 Plug 'romgrk/doom-one.vim'
@@ -26,6 +28,8 @@ Plug 'alvan/vim-closetag'
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'wokalski/autocomplete-flow'
 Plug 'jiangmiao/auto-pairs'
+Plug 'rhysd/vim-color-spring-night'
+Plug 'altercation/vim-colors-solarized'
 " Plug 'kristijanhusak/orgmode.nvim'
 " For func argument completion
 Plug 'Shougo/neosnippet'
@@ -89,8 +93,9 @@ let g:deoplete#enable_at_startup = 1
 " neosnippet
 let g:neosnippet#enable_completed_snippet = 1
 
+autocmd BufNewFile,BufRead *.tt set syntax=html
+
 " colorscheme gruvbox
 " colorscheme onedark
-autocmd BufNewFile,BufRead *.tt setf tt2
 colorscheme miramare
 set background=dark

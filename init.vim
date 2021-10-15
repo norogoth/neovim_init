@@ -25,6 +25,15 @@ Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'kristijanhusak/orgmode.nvim'
 Plug 'vim-utils/vim-man'
 " Plug 'vim-airline/vim-airline'
+
+Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+" Rainbow config
+ let g:rainbow_conf = {
+ \	'guifgs': ['#98D1FB', '#F7E1B6', 'F5C6FD', '#B48EAD', '#EBCB8B'],
+ \	}
+
+" Rainbow config end
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_c = '%<%F%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'

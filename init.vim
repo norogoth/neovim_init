@@ -30,7 +30,7 @@ Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 " Rainbow config
  let g:rainbow_conf = {
- \	'guifgs': ['#98D1FB', '#F7E1B6', 'F5C6FD', '#B48EAD', '#EBCB8B'],
+ \	'guifgs': ['#8FBCBB', '#F7E1B6', 'F5C6FD', '#88C0D0', '#B48EAD', '#5E81AC','#EBCB8B'],
  \	}
 
 " Rainbow config end
@@ -42,6 +42,7 @@ let g:airline_section_y=''
 
 " THEMES
 Plug 'sts10/vim-pink-moon'
+Plug 'mhartington/oceanic-next'
 Plug 'franbach/miramare' 
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'bluz71/vim-moonfly-colors'
@@ -123,6 +124,7 @@ let g:neosnippet#enable_completed_snippet = 1
 
 " Shortcuts
 nn <silent> <F9> :let @+=expand('%:p')<CR>
+" nn <silent> <F10> :let @+=expand('%:p')<CR> " TODO: make this give truncated path
 
 autocmd BufNewFile,BufRead *.tt set syntax=html
 autocmd BufNewFile,BufRead *.epl set syntax=tt2html

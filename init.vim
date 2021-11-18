@@ -1,6 +1,7 @@
 syntax on
 
 set nu
+set autochdir "Should allow the working dir to open when searching
 set noswapfile
 set undodir=~/.vim/undodir
 set undofile
@@ -13,6 +14,10 @@ set foldlevel=1000
 
 " PLUG INS
 call plug#begin('~/.vim/plugged')
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " Required for Telescope
+Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'vim-scripts/copypath.vim'
 Plug 'https://github.com/rstacruz/vim-closer'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -74,7 +79,7 @@ call plug#end()
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
 "
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.ts,*.jsx,*.xml'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.ts,*.jsx,*.tt,*.epl*,*.xml'
 
 " filenames like *.xml, *.xhtml, ...
 " This will make the list of non-closing tags self-closing in the specified files.
@@ -124,6 +129,7 @@ let g:neosnippet#enable_completed_snippet = 1
 
 " Shortcuts
 nn <silent> <F9> :let @+=expand('%:p')<CR>
+nn <silent> <C-c> :Telescope file_browser<CR>
 " nn <silent> <F10> :let @+=expand('%:p')<CR> " TODO: make this give truncated path
 
 autocmd BufNewFile,BufRead *.tt set syntax=html

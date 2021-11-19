@@ -8,8 +8,8 @@ set undofile
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set foldmethod=indent
-set foldlevel=1000
+set foldmethod=manual
+set foldlevel=2
 " set clipboard=unnamedplus
 
 " PLUG INS
@@ -29,6 +29,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'kristijanhusak/orgmode.nvim'
 Plug 'vim-utils/vim-man'
+Plug 'kshenoy/vim-signature'
 " Plug 'vim-airline/vim-airline'
 
 Plug 'luochen1990/rainbow'

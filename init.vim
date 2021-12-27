@@ -8,13 +8,14 @@ set undofile
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set foldmethod=manual
-set foldlevel=2
+set foldmethod=indent
+set foldlevel=999
 " set clipboard=unnamedplus
 
 " PLUG INS
 call plug#begin('~/.vim/plugged')
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " Required for Telescope
+" Plug 'tpope/vim-obsession'
+Plug 'jelera/vim-javascript-syntax'
 Plug 'junegunn/fzf.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -23,14 +24,19 @@ Plug 'https://github.com/rstacruz/vim-closer'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vimwiki/vimwiki'
 Plug 'alvan/vim-closetag'
-Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-Plug 'wokalski/autocomplete-flow'
+"Doesn't work atm Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+"Plug 'wokalski/autocomplete-flow'
+Plug 'ycm-core/YouCompleteMe'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
-Plug 'kristijanhusak/orgmode.nvim'
 Plug 'vim-utils/vim-man'
 Plug 'kshenoy/vim-signature'
-" Plug 'vim-airline/vim-airline'
+Plug 'pangloss/vim-javascript'
+" Plug 'tree-sitter/tree-sitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'nvim-treesitter/playground'
+"" Plug 'vim-airline/vim-airline'
 
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle

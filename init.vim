@@ -14,11 +14,12 @@ set foldlevel=999
 
 " PLUG INS
 call plug#begin('~/.vim/plugged')
-" Plug 'tpope/vim-obsession'
-Plug 'jelera/vim-javascript-syntax'
+Plug 'tpope/vim-obsession'
+" Plug 'jelera/vim-javascript-syntax'
 Plug 'junegunn/fzf.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'vim-scripts/copypath.vim'
 Plug 'https://github.com/rstacruz/vim-closer'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -36,6 +37,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'nvim-treesitter/playground'
+Plug 'p00f/nvim-ts-rainbow'
 "" Plug 'vim-airline/vim-airline'
 
 Plug 'luochen1990/rainbow'
@@ -143,14 +145,15 @@ autocmd BufNewFile,BufRead *.tt set syntax=html
 autocmd BufNewFile,BufRead *.epl set syntax=tt2html
 "au BufNewFile * norm! This_is_a_new_buffer.
 
-" colorscheme gruvbox
-" colorscheme onedark
-" colorscheme miramare
 colorscheme nord
-" colorscheme gruvbox
-" colorscheme solarized
 set termguicolors
-"*** set termguicolors
+
+" Telescope stuff
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " This is only necessary if you use "set termguicolors".
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"

@@ -10,6 +10,7 @@ set shiftwidth=4
 set softtabstop=4
 set foldmethod=indent
 set foldlevel=999
+set mouse=a
 " set clipboard=unnamedplus
 
 " PLUG INS
@@ -25,6 +26,7 @@ Plug 'https://github.com/rstacruz/vim-closer'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vimwiki/vimwiki'
 Plug 'alvan/vim-closetag'
+Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 "Doesn't work atm Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 "Plug 'wokalski/autocomplete-flow'
 Plug 'ycm-core/YouCompleteMe'
@@ -72,6 +74,8 @@ Plug 'chriskempson/base16-vim'
 Plug 'jacoborus/tender.vim'
 Plug 'tomasr/molokai'
 Plug 'norogoth/nord-vim' 
+Plug 'chriskempson/base16-vim'
+let base16colorspace=256  " Access colors present in 256 colorspace
 " ^fork of'arcticicestudio/nord-vim'
 
 "For func argument completion
@@ -145,7 +149,7 @@ autocmd BufNewFile,BufRead *.tt set syntax=html
 autocmd BufNewFile,BufRead *.epl set syntax=tt2html
 "au BufNewFile * norm! This_is_a_new_buffer.
 
-colorscheme nord
+colorscheme doom-one
 set termguicolors
 
 " Telescope stuff

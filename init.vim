@@ -10,17 +10,18 @@ set shiftwidth=4
 set softtabstop=4
 set foldmethod=indent
 set foldlevel=999
+set ignorecase
+set smartcase
 set mouse=a
 " set clipboard=unnamedplus
 
 " PLUG INS
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-obsession'
 " Plug 'jelera/vim-javascript-syntax'
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf.vim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
+" Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'vim-scripts/copypath.vim'
 Plug 'https://github.com/rstacruz/vim-closer'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -31,15 +32,17 @@ Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlig
 "Plug 'wokalski/autocomplete-flow'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'jiangmiao/auto-pairs'
-Plug 'kyoz/purify', { 'rtp': 'vim' }
-Plug 'vim-utils/vim-man'
-Plug 'kshenoy/vim-signature'
+" Plug 'kyoz/purify', { 'rtp': 'vim' }
+" Plug 'vim-utils/vim-man'
+" Plug 'kshenoy/vim-signature'
 Plug 'pangloss/vim-javascript'
 " Plug 'tree-sitter/tree-sitter'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-Plug 'christoomey/vim-tmux-navigator'
+" Plug 'christoomey/vim-tmux-navigator'
+" Plug 'ahmedkhalf/project.nvim'
 Plug 'nvim-treesitter/playground'
-Plug 'p00f/nvim-ts-rainbow'
+" Plug 'p00f/nvim-ts-rainbow'
+Plug 'tpope/vim-obsession'  "Currently overwriting blanks on my sessions on exit
 "" Plug 'vim-airline/vim-airline'
 
 Plug 'luochen1990/rainbow'
@@ -70,11 +73,12 @@ Plug 'rhysd/vim-color-spring-night'
 Plug 'sonobre/briofita_vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'dracula/vim', { 'name': 'dracula' }
-Plug 'chriskempson/base16-vim'
 Plug 'jacoborus/tender.vim'
 Plug 'tomasr/molokai'
 Plug 'norogoth/nord-vim' 
-Plug 'chriskempson/base16-vim'
+Plug 'ghifarit53/tokyonight-vim'
+let g:tokyonight_style = 'storm' " available: night, storm
+let g:tokyonight_enable_italic = 1
 let base16colorspace=256  " Access colors present in 256 colorspace
 " ^fork of'arcticicestudio/nord-vim'
 
@@ -149,9 +153,6 @@ autocmd BufNewFile,BufRead *.tt set syntax=html
 autocmd BufNewFile,BufRead *.epl set syntax=tt2html
 "au BufNewFile * norm! This_is_a_new_buffer.
 
-colorscheme doom-one
-set termguicolors
-
 " Telescope stuff
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -163,8 +164,11 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
+set termguicolors
+colorscheme doom-one
+
+" set background=dark
 " fixes glitch? in colors when using vim with tmux
-set background=dark
 set t_Co=256
 let g:gruvbox_constrast_light='soft'
 let g:nord_cursor_line_number_background = 1

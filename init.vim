@@ -16,34 +16,34 @@ set mouse=a
 " set clipboard=unnamedplus
 
 " PLUG INS
-call plug#begin('~/.vim/plugged')
 " Plug 'jelera/vim-javascript-syntax'
 " Plug 'junegunn/fzf.vim'
-Plug 'nvim-lua/plenary.nvim'
 " Plug 'nvim-telescope/telescope.nvim'
 " Plug 'nvim-telescope/telescope-fzy-native.nvim'
+"Doesn't work atm Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+" Plug 'wokalski/autocomplete-flow'
+" Plug 'kyoz/purify', { 'rtp': 'vim' }
+" Plug 'vim-utils/vim-man'
+" Plug 'kshenoy/vim-signature'
+" Plug 'tree-sitter/tree-sitter'
+" Plug 'christoomey/vim-tmux-navigator'
+" Plug 'ahmedkhalf/project.nvim'
+" Plug 'p00f/nvim-ts-rainbow'
+"" Plug 'vim-airline/vim-airline'
+call plug#begin('~/.vim/plugged')
+Plug 'nvim-lua/plenary.nvim'
 Plug 'vim-scripts/copypath.vim'
 Plug 'https://github.com/rstacruz/vim-closer'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vimwiki/vimwiki'
 Plug 'alvan/vim-closetag'
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
-"Doesn't work atm Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-"Plug 'wokalski/autocomplete-flow'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'kyoz/purify', { 'rtp': 'vim' }
-" Plug 'vim-utils/vim-man'
-" Plug 'kshenoy/vim-signature'
 Plug 'pangloss/vim-javascript'
-" Plug 'tree-sitter/tree-sitter'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-" Plug 'christoomey/vim-tmux-navigator'
-" Plug 'ahmedkhalf/project.nvim'
 Plug 'nvim-treesitter/playground'
-" Plug 'p00f/nvim-ts-rainbow'
 Plug 'tpope/vim-obsession'  "Currently overwriting blanks on my sessions on exit
-"" Plug 'vim-airline/vim-airline'
 
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
@@ -65,7 +65,6 @@ Plug 'mhartington/oceanic-next'
 Plug 'franbach/miramare' 
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'bluz71/vim-moonfly-colors'
-Plug 'pineapplegiant/spaceduck'
 Plug 'romgrk/doom-one.vim'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
@@ -74,9 +73,11 @@ Plug 'sonobre/briofita_vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'jacoborus/tender.vim'
-Plug 'tomasr/molokai'
 Plug 'norogoth/nord-vim' 
 Plug 'ghifarit53/tokyonight-vim'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'sainnhe/everforest'
+Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 let g:tokyonight_style = 'storm' " available: night, storm
 let g:tokyonight_enable_italic = 1
 let base16colorspace=256  " Access colors present in 256 colorspace

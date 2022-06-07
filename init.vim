@@ -46,6 +46,7 @@ Plug 'nvim-treesitter/playground'
 Plug 'tpope/vim-obsession'  "Currently overwriting blanks on my sessions on exit
 
 Plug 'luochen1990/rainbow'
+Plug 'srcery-colors/srcery-vim'
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 " Rainbow config
  let g:rainbow_conf = {
@@ -78,6 +79,11 @@ Plug 'ghifarit53/tokyonight-vim'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'sainnhe/everforest'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+Plug 'HenryNewcomer/vim-theme-papaya'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'sainnhe/gruvbox-material'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'ajmwagar/vim-deus'
 let g:tokyonight_style = 'storm' " available: night, storm
 let g:tokyonight_enable_italic = 1
 let base16colorspace=256  " Access colors present in 256 colorspace
@@ -166,7 +172,7 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 set termguicolors
-colorscheme doom-one
+colorscheme embark
 
 " set background=dark
 " fixes glitch? in colors when using vim with tmux

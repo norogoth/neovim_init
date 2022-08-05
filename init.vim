@@ -8,6 +8,7 @@ set undofile
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set expandtab
 set foldmethod=indent
 set foldlevel=999
 set ignorecase
@@ -30,6 +31,7 @@ set mouse=a
 " Plug 'ahmedkhalf/project.nvim'
 " Plug 'p00f/nvim-ts-rainbow'
 "" Plug 'vim-airline/vim-airline'
+" Plug 'ycm-core/YouCompleteMe'
 call plug#begin('~/.vim/plugged')
 Plug 'nvim-lua/plenary.nvim'
 Plug 'vim-scripts/copypath.vim'
@@ -38,15 +40,23 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vimwiki/vimwiki'
 Plug 'alvan/vim-closetag'
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
-Plug 'ycm-core/YouCompleteMe'
 Plug 'jiangmiao/auto-pairs'
 Plug 'pangloss/vim-javascript'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-treesitter/playground'
 Plug 'tpope/vim-obsession'  "Currently overwriting blanks on my sessions on exit
-
+Plug 'vim-perl/vim-perl'
 Plug 'luochen1990/rainbow'
 Plug 'srcery-colors/srcery-vim'
+Plug 'ganezdragon/tree-sitter-perl'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mhinz/vim-startify'
+Plug 'bling/vim-bufferline'
+let g:bufferline_modified = '+'
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+let g:startify_lists = [
+        \ { 'type': 'sessions',  'header': ['   Sessions']       },
+        \ ]
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 " Rainbow config
  let g:rainbow_conf = {
@@ -74,7 +84,7 @@ Plug 'sonobre/briofita_vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'jacoborus/tender.vim'
-Plug 'norogoth/nord-vim' 
+Plug 'norogoth/nord-vim' " my fork of the original nord theme
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'sainnhe/everforest'
@@ -87,7 +97,6 @@ Plug 'ajmwagar/vim-deus'
 let g:tokyonight_style = 'storm' " available: night, storm
 let g:tokyonight_enable_italic = 1
 let base16colorspace=256  " Access colors present in 256 colorspace
-" ^fork of'arcticicestudio/nord-vim'
 
 "For func argument completion
 Plug 'Shougo/neosnippet'
@@ -156,7 +165,7 @@ nn <silent> <F9> :let @+=expand('%:p')<CR>
 nn <silent> <C-c> :Telescope file_browser<CR>
 " nn <silent> <F10> :let @+=expand('%:p')<CR> " TODO: make this give truncated path
 
-autocmd BufNewFile,BufRead *.tt set syntax=html
+autocmd BufNewFile,BufRead *.tt set syntax=tt2html
 autocmd BufNewFile,BufRead *.epl set syntax=tt2html
 "au BufNewFile * norm! This_is_a_new_buffer.
 
@@ -172,7 +181,7 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 set termguicolors
-colorscheme embark
+colorscheme doom-one
 
 " set background=dark
 " fixes glitch? in colors when using vim with tmux

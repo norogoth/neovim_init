@@ -50,8 +50,13 @@ Plug 'luochen1990/rainbow'
 Plug 'srcery-colors/srcery-vim'
 Plug 'ganezdragon/tree-sitter-perl'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mhinz/vim-startify'
 Plug 'bling/vim-bufferline'
+Plug 'Asheq/close-buffers.vim'
+Plug 'lukas-reineke/indent-blankline.nvim' " indentation guides on all lines
+Plug 'nvim-lualine/lualine.nvim' " fancier status line
+
+" Plug 'mhinz/vim-startify'
+" Plug 'nvim-lua/plenary.nvim'
 let g:bufferline_modified = '+'
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 let g:startify_lists = [
@@ -71,29 +76,26 @@ let g:airline_section_y=''
 "Plug 'vim-airline/vim-airline-themes'
 
 " THEMES
-Plug 'sts10/vim-pink-moon'
 Plug 'mhartington/oceanic-next'
 Plug 'franbach/miramare' 
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-Plug 'bluz71/vim-moonfly-colors'
 Plug 'romgrk/doom-one.vim'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'rhysd/vim-color-spring-night'
-Plug 'sonobre/briofita_vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'jacoborus/tender.vim'
 Plug 'norogoth/nord-vim' " my fork of the original nord theme
-Plug 'ghifarit53/tokyonight-vim'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'sainnhe/everforest'
+let g:everforest_background = 'hard'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
-Plug 'HenryNewcomer/vim-theme-papaya'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'sainnhe/gruvbox-material'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'ajmwagar/vim-deus'
+Plug 'sainnhe/edge'
+Plug 'sainnhe/sonokai'
 let g:tokyonight_style = 'storm' " available: night, storm
 let g:tokyonight_enable_italic = 1
 let base16colorspace=256  " Access colors present in 256 colorspace
@@ -175,6 +177,7 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nmap <C-l> :ls<CR>
 
 " This is only necessary if you use "set termguicolors".
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
